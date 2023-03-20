@@ -1,10 +1,10 @@
 {
   "name": "vue-cli-plugin-dependency-dist-copy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "VUE CLI plugin: Copy all files from dependencies to distribution folder",
-  "main": "src/index.js",
+  "main": "index.js",
   "files": [
-    "src/*",
+    "*.js",
     "*.md"
   ],
   "dependencies": {
