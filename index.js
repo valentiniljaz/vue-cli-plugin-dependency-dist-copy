@@ -13,9 +13,9 @@ module.exports = (api, { pluginOptions }) => {
     if ('dependencyDistCopy' in pluginOptions) {
         for (let dep in pluginOptions.dependencyDistCopy) {
             for (let depCpOpt of pluginOptions.dependencyDistCopy[dep]) {
-                const pathRoot = depCpOpt.root
+                const pathRoot = path.join(process.cwd(), depCpOpt.root)
                 const pathPattern = depCpOpt.pattern
-                const pathFull = path.join(process.cwd(), pathRoot, pathPattern)
+                const pathFull = path.join(pathRoot, pathPattern)
 
                 // Add to webpack config
                 depsCopy.webpackCopy.push(
@@ -32,7 +32,7 @@ module.exports = (api, { pluginOptions }) => {
             }
         }
     }
-    
+
     // Webpack
     if (depsCopy.webpackCopy.length > 0) {
         api.chainWebpack(webpackConfig => {
