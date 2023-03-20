@@ -1,0 +1,20 @@
+{
+  "name": "vue-cli-plugin-dependency-dist-copy",
+  "version": "1.0.0",
+  "description": "VUE CLI plugin: Copy all files from dependencies to distribution folder",
+  "main": "src/index.js",
+  "files": [
+    "src/*",
+    "*.md"
+  ],
+  "dependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "glob": "^9.3.0"
+  },
+  "author": "Valentin Iljaž <valentin.iljaz@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/progmbh/sirius-sections.git"
+  }
+}
