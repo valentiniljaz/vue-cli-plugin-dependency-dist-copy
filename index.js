@@ -15,7 +15,7 @@ module.exports = (api, { pluginOptions }) => {
             for (let depCpOpt of pluginOptions.dependencyDistCopy[dep]) {
                 const pathRoot = depCpOpt.root
                 const pathPattern = depCpOpt.pattern
-                const pathFull = path.join(pathRoot, pathPattern)
+                const pathFull = path.join(process.cwd(), pathRoot, pathPattern)
 
                 // Add to webpack config
                 depsCopy.webpackCopy.push(
@@ -27,7 +27,7 @@ module.exports = (api, { pluginOptions }) => {
                 for (let f in files) {
                     const file = files[f]
                     depsCopy.devAlias.match.push(file.replace(pathRoot, '').replace(/^[\/\\]+/, ''))
-                    depsCopy.devAlias.send.push(path.join(process.cwd(), file))
+                    depsCopy.devAlias.send.push(file)
                 }
             }
         }
